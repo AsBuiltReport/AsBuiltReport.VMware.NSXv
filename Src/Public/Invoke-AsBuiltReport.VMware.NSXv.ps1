@@ -19,7 +19,8 @@ function Invoke-AsBuiltReport.VMware.NSXv {
     [CmdletBinding()]
     param (
         $Target,
-        [pscredential] $Credential
+        [pscredential] $Credential,
+		$StyleName
     )
     
     # If custom style not set, use default style
@@ -193,48 +194,52 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                                 Section -Style Heading5 "NAT Rules" {
                                     $SNATRules = $NSXEdgeNATRules | Where-Object {$_.Action -eq "snat"}
                                     $DNATRules = $NSXEdgeNATRules | Where-Object {$_.Action -eq "dnat"}
-                                    Section -Style Heading6 "SNAT Rules" {
-                                        $SNATRuleConfig = foreach ($SNATRule in $SNATRules) {
-                                            [PSCustomObject] @{
-                                                'Rule ID' = $SNATRule.RuleId
-                                                Action = $SNATRule.Action
-                                                Enabled = $SNATRule.Enabled
-                                                Description = $SNATRule.Description
-                                                RuleType = $SNATRule.RuleType
-                                                EdgeNIC = $SNATRule.vnic
-                                                OriginalAddress = $SNATRule.OriginalAddress
-                                                OriginalPort = $SNATRule.OriginalPort
-                                                TranslatedAddress = $SNATRule.TranslatedAddress
-                                                TranslatedPort = $SNATRule.TranslatedPort
-                                                Protocol = $SNATRule.Protocol
-                                                'SNAT Destination Address' = $SNATRule.snatMatchDestinationAddress
-                                                'SNAT Destination Port' = $SNATRule.snatMatchDestinationPort
-                                                'Logging Enabled' = $SNATRule.loggingEnabled
-                                            }
-                                        }
-                                        $SNATRuleConfig | Table -Name "SNAT Rules" -List
-                                    }
-                                    Section -Style Heading6 "DNAT Rules" {
-                                        $DNATRuleConfig = foreach ($DNATRule in $DNATRules) {
-                                            [PSCustomObject] @{
-                                                'Rule ID' = $DNATRule.RuleId
-                                                Action = $DNATRule.Action
-                                                Enabled = $DNATRule.Enabled
-                                                Description = $DNATRule.Description
-                                                RuleType = $DNATRule.RuleType
-                                                EdgeNIC = $DNATRule.vnic
-                                                OriginalAddress = $DNATRule.OriginalAddress
-                                                OriginalPort = $DNATRule.OriginalPort
-                                                TranslatedAddress = $DNATRule.TranslatedAddress
-                                                TranslatedPort = $DNATRule.TranslatedPort
-                                                Protocol = $DNATRule.Protocol
-                                                'DNAT Source Address' = $DNATRule.dnatMatchSourceAddress
-                                                'DNAT Source Port' = $DNATRule.dnatMatchSourcePort
-                                                'Logging Enabled' = $DNATRule.loggingEnabled
-                                            }
-                                        }
-                                        $DNATRuleConfig | Table -Name "DNAT Rules" -List
-                                    }
+									if ($SNATRules){
+										Section -Style Heading6 "SNAT Rules" {
+											$SNATRuleConfig = foreach ($SNATRule in $SNATRules) {
+												[PSCustomObject] @{
+													'Rule ID' = $SNATRule.RuleId
+													Action = $SNATRule.Action
+													Enabled = $SNATRule.Enabled
+													Description = $SNATRule.Description
+													RuleType = $SNATRule.RuleType
+													EdgeNIC = $SNATRule.vnic
+													OriginalAddress = $SNATRule.OriginalAddress
+													OriginalPort = $SNATRule.OriginalPort
+													TranslatedAddress = $SNATRule.TranslatedAddress
+													TranslatedPort = $SNATRule.TranslatedPort
+													Protocol = $SNATRule.Protocol
+													'SNAT Destination Address' = $SNATRule.snatMatchDestinationAddress
+													'SNAT Destination Port' = $SNATRule.snatMatchDestinationPort
+													'Logging Enabled' = $SNATRule.loggingEnabled
+												}
+											}
+											$SNATRuleConfig | Table -Name "SNAT Rules" -List -ColumnWidths 50, 50
+										}
+									}#end if $SNATRules
+									if ($DNATRules){
+										Section -Style Heading6 "DNAT Rules" {
+											$DNATRuleConfig = foreach ($DNATRule in $DNATRules) {
+												[PSCustomObject] @{
+													'Rule ID' = $DNATRule.RuleId
+													Action = $DNATRule.Action
+													Enabled = $DNATRule.Enabled
+													Description = $DNATRule.Description
+													RuleType = $DNATRule.RuleType
+													EdgeNIC = $DNATRule.vnic
+													OriginalAddress = $DNATRule.OriginalAddress
+													OriginalPort = $DNATRule.OriginalPort
+													TranslatedAddress = $DNATRule.TranslatedAddress
+													TranslatedPort = $DNATRule.TranslatedPort
+													Protocol = $DNATRule.Protocol
+													'DNAT Source Address' = $DNATRule.dnatMatchSourceAddress
+													'DNAT Source Port' = $DNATRule.dnatMatchSourcePort
+													'Logging Enabled' = $DNATRule.loggingEnabled
+												}
+											}
+											$DNATRuleConfig | Table -Name "DNAT Rules" -List -ColumnWidths 50, 50
+										}
+									}#end if $DNATRules
                                 }#end Section -Style Heading5 "NAT Rules"
                             }#End $NSXEdgeNATRules
 
@@ -325,7 +330,7 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                                     'Enable User Identity at Source' = $NSXFirewallSection.useSid
                                 }
                             }
-                            $NSXFirewallSectionSettings | table -Name "DFW Firewall Section Information" -List
+                            $NSXFirewallSectionSettings | table -Name "DFW Firewall Section Information" -List -ColumnWidths 50, 50
                         }
 
                         #For each Section in the DFW, loop through to get information about each rule within the secion and document each rule
