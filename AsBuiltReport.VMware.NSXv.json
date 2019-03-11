@@ -1,4 +1,9 @@
 {
+	"Report": {
+        "Name": "VMware NSXv As Built Report",
+        "Version": "1.0",
+        "Status": "Released"
+    },
     "Options": {
     },
     "InfoLevel": {
