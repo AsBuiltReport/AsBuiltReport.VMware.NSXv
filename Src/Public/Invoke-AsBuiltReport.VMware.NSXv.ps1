@@ -18,14 +18,14 @@ function Invoke-AsBuiltReport.VMware.NSXv {
     #region Script Parameters
     [CmdletBinding()]
     param (
-        $Target,
+        [String[]] $Target,
         [pscredential] $Credential,
-		$StyleName
+		$StylePath
     )
     
     # If custom style not set, use default style
-    if (!$StyleName) {
-        & "$PSScriptRoot\..\Assets\DefaultStyle.ps1"
+    if (!$StylePath) {
+        & "$PSScriptRoot\..\..\AsBuiltReport.VMware.NSXv.Style.ps1"
     }
     
     foreach ($Server in $Target){
