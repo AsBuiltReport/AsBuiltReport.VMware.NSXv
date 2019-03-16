@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>VMware NSXv As Built Report - 2019-03-16_14.37.16</title>
+<style type="text/css">
+html { height: 100%; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background: #f8f8f8; }
+page { background: white; width: 297mm; display: block; margin-top: 1em; margin-left: auto; margin-right: auto; margin-bottom: 1em; border-style: solid; border-width: 1px; border-color: #c6c6c6; }
+@media print { body, page { margin: 0; box-shadow: 0; } }
+hr { margin-top: 1.0em; }
+ .H1ExcludeTOC { font-family: 'Arial'; font-size: 1.33em; text-align: left; font-weight: normal; color: #007cbb; }
+ .TOC { font-family: 'Arial'; font-size: 1.33em; text-align: left; font-weight: normal; color: #007cbb; }
+ .Heading4 { font-family: 'Arial'; font-size: 0.92em; text-align: left; font-weight: normal; color: #007cbb; }
+ .Heading2 { font-family: 'Arial'; font-size: 1.17em; text-align: left; font-weight: normal; color: #007cbb; }
+ .OK { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #000000; background-color: #aadb1e; }
+ .Normal { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #565656; }
+ .Title3 { font-family: 'Arial'; font-size: 1.00em; text-align: left; font-weight: normal; color: #007cbb; }
+ .Info { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #000000; background-color: #a6d8e7; }
+ .TableDefaultHeading { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #faf7ee; background-color: #002538; }
+ .Heading1 { font-family: 'Arial'; font-size: 1.33em; text-align: left; font-weight: normal; color: #007cbb; }
+ .Title { font-family: 'Arial'; font-size: 2.00em; text-align: center; font-weight: normal; color: #002538; }
+ .TableDefaultRow { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #000000; }
+ .Title2 { font-family: 'Arial'; font-size: 1.50em; text-align: center; font-weight: normal; color: #007cbb; }
+ .Footer { font-family: 'Calibri','Candara','Segoe','Segoe UI','Optima','Arial','Sans-Serif'; font-size: 0.67em; text-align: left; font-weight: normal; color: #0072af; }
+ .Warning { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #000000; background-color: #ffe860; }
+ .Critical { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #000000; background-color: #ffb38f; }
+ .Heading6 { font-family: 'Calibri','Candara','Segoe','Segoe UI','Optima','Arial','Sans-Serif'; font-size: 0.92em; text-align: left; font-weight: normal; color: #1f3763; }
+ .TableDefaultAltRow { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #000000; background-color: #d9e4ea; }
+ .Heading5 { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #007cbb; }
+ .Heading3 { font-family: 'Arial'; font-size: 1.00em; text-align: left; font-weight: normal; color: #007cbb; }
+ table.tabledefault { border-style: solid; padding: 0.08em 0.33em 0em 0.33em; border-width: 0.04em; border-color: #002538; border-collapse: collapse; }
+ table.tabledefault th { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #faf7ee; background-color: #002538; border-style: solid; padding: 0.08em 0.33em 0em 0.33em; border-width: 0.04em; border-color: #002538; border-collapse: collapse; }
+ table.tabledefault tr:nth-child(odd) td { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #000000; border-style: solid; padding: 0.08em 0.33em 0em 0.33em; border-width: 0.04em; border-color: #002538; border-collapse: collapse; }
+ table.tabledefault tr:nth-child(even) td { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #000000; background-color: #d9e4ea; border-style: solid; padding: 0.08em 0.33em 0em 0.33em; border-width: 0.04em; border-color: #002538; border-collapse: collapse; }
+ table.tabledefault-list { border-style: solid; padding: 0.08em 0.33em 0em 0.33em; border-width: 0.04em; border-color: #002538; border-collapse: collapse; }
+ table.tabledefault-list td:nth-child(1) { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #faf7ee; background-color: #002538; border-style: solid; padding: 0.08em 0.33em 0em 0.33em; border-width: 0.04em; border-color: #002538; border-collapse: collapse; }
+ table.tabledefault-list td:nth-child(2) { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #000000; border-style: solid; padding: 0.08em 0.33em 0em 0.33em; border-width: 0.04em; border-color: #002538; border-collapse: collapse; }
+ table.borderless { border-style: none; padding: 0.08em 0.33em 0em 0.33em; border-collapse: collapse; }
+ table.borderless th { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #565656; border-style: none; padding: 0.08em 0.33em 0em 0.33em; border-collapse: collapse; }
+ table.borderless tr:nth-child(odd) td { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #565656; border-style: none; padding: 0.08em 0.33em 0em 0.33em; border-collapse: collapse; }
+ table.borderless tr:nth-child(even) td { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #565656; border-style: none; padding: 0.08em 0.33em 0em 0.33em; border-collapse: collapse; }
+ table.borderless-list { border-style: none; padding: 0.08em 0.33em 0em 0.33em; border-collapse: collapse; }
+ table.borderless-list td:nth-child(1) { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #565656; border-style: none; padding: 0.08em 0.33em 0em 0.33em; border-collapse: collapse; }
+ table.borderless-list td:nth-child(2) { font-family: 'Arial'; font-size: 0.83em; text-align: left; font-weight: normal; color: #565656; border-style: none; padding: 0.08em 0.33em 0em 0.33em; border-collapse: collapse; }
+</style></head><body><page>
+<div class="Normal" style="padding-top: 5.92em; padding-left: 5.92em; padding-bottom: 5.92em; padding-right: 5.92em;">
+<br /><br /><br /><br /><br /><br /><br /><div class="Title">VMware NSXv As Built Report</div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><div><table class="borderless-list"><tbody><tr><td>Author:</td><td>matt</td></tr><tr><td>Date:</td><td>16 March 2019</td></tr><tr><td>Version:</td><td>1.0</td></tr></tbody></table></div>
+</div></page><page><div class="Normal" style="padding-top: 5.92em; padding-left: 5.92em; padding-bottom: 5.92em; padding-right: 5.92em;">
+<h1 class="TOC">Table of Contents</h1><table>
+<tr><td>1</td><td><a href="#b19419ec-815b-4ff8-9f4d-4baaea5bf7bf" style="text-decoration: none;">NSX</a></td></tr>
+<tr><td>1.1</td><td>&nbsp;&nbsp;&nbsp;<a href="#7cb0cbae-d013-431a-94f2-1b9f099ee46b" style="text-decoration: none;">Controllers</a></td></tr>
+<tr><td>1.2</td><td>&nbsp;&nbsp;&nbsp;<a href="#c21a823b-b55a-4920-9510-2cf3796cfb52" style="text-decoration: none;">Segment IDs</a></td></tr>
+<tr><td>1.3</td><td>&nbsp;&nbsp;&nbsp;<a href="#b878837f-f70e-46fe-828b-1c8cd61a6b98" style="text-decoration: none;">Transport Zones</a></td></tr>
+<tr><td>1.4</td><td>&nbsp;&nbsp;&nbsp;<a href="#38365d43-528b-4594-af0a-4e3a3d80d946" style="text-decoration: none;">Logical Switches</a></td></tr>
+<tr><td>1.5</td><td>&nbsp;&nbsp;&nbsp;<a href="#8810b986-26cf-48e2-b945-241498e92f10" style="text-decoration: none;">Edges</a></td></tr>
+<tr><td>1.5.1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#40213353-85f8-4657-9c07-6827170cf8bb" style="text-decoration: none;">SiteA-ESG-01</a></td></tr>
+<tr><td>1.5.1.1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#77ade276-874f-4732-8a82-2e3a20d13da2" style="text-decoration: none;">vNIC Settings</a></td></tr>
+<tr><td>1.5.1.2</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#7f73705a-0d0b-44da-b4df-2469fdf242ba" style="text-decoration: none;">NAT Rules</a></td></tr>
+<tr><td>1.5.1.2.1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#613ddc78-45f1-4265-818d-1bf96c7eda63" style="text-decoration: none;">SNAT Rules</a></td></tr>
+<tr><td>1.5.1.2.2</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#bf383c93-7e36-4676-b4c7-6c48feeebc73" style="text-decoration: none;">DNAT Rules</a></td></tr>
+<tr><td>1.5.1.3</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1aac9161-15df-41af-a0ee-0d587e98d700" style="text-decoration: none;">DNS Settings</a></td></tr>
+<tr><td>1.5.1.4</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#c29756e4-617c-4fbf-82a8-24a15d892b3d" style="text-decoration: none;">Syslog Settings</a></td></tr>
+<tr><td>1.5.2</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#d346d587-bce5-4288-93f7-03be4415e290" style="text-decoration: none;">SiteA-Web-LB01</a></td></tr>
+<tr><td>1.5.2.1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#071eb10f-c008-427a-b5a5-29d8011a1d50" style="text-decoration: none;">vNIC Settings</a></td></tr>
+<tr><td>1.5.3</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#6738aec3-2e2e-4c41-81b7-23f5341234d8" style="text-decoration: none;">SiteA-App-LB01</a></td></tr>
+<tr><td>1.5.3.1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#6b74eb2b-df73-49d3-acb0-c1fe14954df7" style="text-decoration: none;">vNIC Settings</a></td></tr>
+<tr><td>1.5.4</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#e6732d3b-510c-41ba-965c-39f7d91012b7" style="text-decoration: none;">Tenant1-ESG</a></td></tr>
+<tr><td>1.5.4.1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ed12ed07-0e2b-44f5-8780-499f52e06304" style="text-decoration: none;">vNIC Settings</a></td></tr>
+<tr><td>1.5.4.2</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ee3443ff-6efe-4692-a5d0-c3d26faef8a8" style="text-decoration: none;">Syslog Settings</a></td></tr>
+<tr><td>1.6</td><td>&nbsp;&nbsp;&nbsp;<a href="#6b9729f3-b60f-4466-9e07-07c12db1fc24" style="text-decoration: none;">Distributed Firewall</a></td></tr>
+<tr><td>1.6.1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#86c285f4-57b4-4318-aa5d-de5773473982" style="text-decoration: none;">DFW Firewall Sections</a></td></tr>
+<tr><td>1.6.2</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#58bdc673-d122-436c-9e3d-2db94f7d9708" style="text-decoration: none;">Active Directory Firewall Rules</a></td></tr>
+<tr><td>1.6.3</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#55ce666a-40ad-4c7c-95ce-b25909125b27" style="text-decoration: none;">Default Section Layer3 Firewall Rules</a></td></tr>
+<tr><td>1.7</td><td>&nbsp;&nbsp;&nbsp;<a href="#085528e6-9c83-4626-8a98-ada0c7cc774f" style="text-decoration: none;">Security Groups</a></td></tr>
+<tr><td>1.7.1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#61ad6900-c178-4e40-8460-d383b4c63933" style="text-decoration: none;">Security Group Summary</a></td></tr>
+<tr><td>1.7.1.1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#3def45e5-ed6d-4b86-9673-287267c88a6d" style="text-decoration: none;">Static Security Groups</a></td></tr>
+<tr><td>1.7.1.2</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#8389b568-dc1b-4026-8a2c-1f4040ad876f" style="text-decoration: none;">Dynamic Security Groups</a></td></tr>
+<tr><td>1.8</td><td>&nbsp;&nbsp;&nbsp;<a href="#4c53b5f9-2159-4fdd-8637-ca9958f457ff" style="text-decoration: none;">IP Sets</a></td></tr>
+<tr><td>1.9</td><td>&nbsp;&nbsp;&nbsp;<a href="#622c3afb-d55b-444b-8b04-cb9526c618fa" style="text-decoration: none;">Mac Sets</a></td></tr>
+</table>
+</div></page><page><div class="Normal" style="padding-top: 5.92em; padding-left: 5.92em; padding-bottom: 5.92em; padding-right: 5.92em;">
+<a name="b19419ec-815b-4ff8-9f4d-4baaea5bf7bf"><h1 class="Heading2">1 NSX</h1></a><div>The following section provides a summary of the VMware NSX configuration.</div><br /><div><table class="tabledefault-list" style="width:100%;"><tbody><tr><td>NSX Manager Address</td><td>192.168.36.50</td></tr><tr><td>NSX Manager Version</td><td>6.4.4</td></tr><tr><td>NSX Manager Build Number</td><td>11197766</td></tr><tr><td>NSX Controller Count</td><td>3</td></tr><tr><td>NSX Edge Count</td><td>4</td></tr><tr><td>NSX Logical Router Count</td><td>&nbsp;</td></tr><tr><td>NSX Distributed Firewall Sections</td><td>2</td></tr><tr><td>NSX Logical Switch Count</td><td>4</td></tr><tr><td>NSX Security Group Count</td><td>2</td></tr><tr><td>NSX Segment ID Count</td><td>&nbsp;</td></tr><tr><td>NSX Transport Zone Count</td><td>&nbsp;</td></tr><tr><td>NSX IP Set Count</td><td>&nbsp;</td></tr></tbody></table></div>
+<a name="7cb0cbae-d013-431a-94f2-1b9f099ee46b"><h2 class="Heading3">1.1 Controllers</h2></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Name</th><th>ID</th><th>IP Address</th><th>Status</th><th>Version</th><th>Is Universal</th></tr></thead><tbody>
+<tr><td>Controller03</td><td>controller-31</td><td>192.168.36.55</td><td>RUNNING</td><td>6.4.4.10927634</td><td>false</td></tr>
+<tr><td>SiteA-Controller01</td><td>controller-15</td><td>192.168.36.52</td><td>RUNNING</td><td>6.4.4.10927634</td><td>false</td></tr>
+<tr><td>Controller02</td><td>controller-23</td><td>192.168.36.53</td><td>UNKNOWN</td><td>6.4.4.10927634</td><td>false</td></tr>
+</tbody></table></div>
+<a name="c21a823b-b55a-4920-9510-2cf3796cfb52"><h2 class="Heading3">1.2 Segment IDs</h2></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Segment ID</th><th>Segment Name</th><th>Segment ID Pool Begin</th><th>Segment ID Pool End</th><th>Is Universal</th></tr></thead><tbody>
+<tr><td>1</td><td>legacy</td><td>5000</td><td>6000</td><td>false</td></tr>
+</tbody></table></div>
+<a name="b878837f-f70e-46fe-828b-1c8cd61a6b98"><h2 class="Heading3">1.3 Transport Zones</h2></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Name</th><th>Is Universal</th><th>Description</th><th>Replication Mode</th><th>Attached Clusters</th><th>Associated Logical Switch #</th><th>CDO Mode Enabled</th></tr></thead><tbody>
+<tr><td>Site-A</td><td>false</td><td>&nbsp;</td><td>UNICAST_MODE</td><td>SiteACluster</td><td>4</td><td>false</td></tr>
+</tbody></table></div>
+<a name="38365d43-528b-4594-af0a-4e3a3d80d946"><h2 class="Heading3">1.4 Logical Switches</h2></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Name</th><th>ID</th><th>Is Universal</th><th>Description</th><th>Control Plane Mode</th><th>Attached VM #</th></tr></thead><tbody>
+<tr><td>Transit-Network</td><td>virtualwire-8</td><td>false</td><td>&nbsp;</td><td>UNICAST_MODE</td><td>4</td></tr>
+<tr><td>App Network</td><td>virtualwire-9</td><td>false</td><td>&nbsp;</td><td>UNICAST_MODE</td><td>3</td></tr>
+<tr><td>Web Network</td><td>virtualwire-10</td><td>false</td><td>&nbsp;</td><td>UNICAST_MODE</td><td>3</td></tr>
+<tr><td>DB Network</td><td>virtualwire-11</td><td>false</td><td>&nbsp;</td><td>UNICAST_MODE</td><td>1</td></tr>
+</tbody></table></div>
+<a name="8810b986-26cf-48e2-b945-241498e92f10"><h2 class="Heading3">1.5 Edges</h2></a><a name="40213353-85f8-4657-9c07-6827170cf8bb"><h3 class="Heading4">1.5.1 SiteA-ESG-01</h3></a><div><table class="tabledefault-list" style="width:100%;"><tbody><tr><td>Name</td><td>SiteA-ESG-01</td></tr><tr><td>ID</td><td>edge-12</td></tr><tr><td>Version</td><td>33</td></tr><tr><td>Status</td><td>deployed</td></tr><tr><td>Type</td><td>gatewayServices</td></tr><tr><td>Connected VNICs</td><td>2</td></tr><tr><td>Edge Status</td><td>GREEN</td></tr><tr><td>Is Universal</td><td>false</td></tr><tr><td>Edge HA Enabled</td><td>false</td></tr><tr><td>Deploy Appliance</td><td>true</td></tr><tr><td>Appliance Size</td><td>compact</td></tr><tr><td>Syslog Enabled</td><td>true</td></tr><tr><td>SSH Enabled</td><td>true</td></tr><tr><td>Edge Autoconfiguration Enabled</td><td>true</td></tr><tr><td>FIPS Enabled</td><td>false</td></tr><tr><td>NAT Enabled</td><td>true</td></tr><tr><td>Layer 2 VPN Enabled</td><td>false</td></tr><tr><td>DNS Enabled</td><td>true</td></tr><tr><td>SSL VPN Enabled</td><td>false</td></tr><tr><td>Firewall Enabled</td><td>true</td></tr><tr><td>IPSEC VPN Enabled</td><td>false</td></tr><tr><td>Load Balancer Enabled</td><td>false</td></tr><tr><td>DHCP Server Enabled</td><td>false</td></tr><tr><td>Layer 2 Bridges Enabled</td><td>false</td></tr></tbody></table></div>
+<a name="77ade276-874f-4732-8a82-2e3a20d13da2"><h4 class="Heading5">1.5.1.1 vNIC Settings</h4></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Label</th><th>VNIC Number</th><th>Name</th><th>MTU</th><th>Type</th><th>Connected</th><th>Portgroup Name</th></tr></thead><tbody>
+<tr><td>vNic_0</td><td>0</td><td>Uplink</td><td>1500</td><td>uplink</td><td>true</td><td>VLAN-36</td></tr>
+<tr><td>vNic_1</td><td>1</td><td>Internal_To_DLR</td><td>1500</td><td>internal</td><td>true</td><td>Transit-Network</td></tr>
+<tr><td>vNic_2</td><td>2</td><td>vnic2</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_3</td><td>3</td><td>vnic3</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_4</td><td>4</td><td>vnic4</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_5</td><td>5</td><td>vnic5</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_6</td><td>6</td><td>vnic6</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_7</td><td>7</td><td>vnic7</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_8</td><td>8</td><td>vnic8</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_9</td><td>9</td><td>vnic9</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+</tbody></table></div>
+<a name="7f73705a-0d0b-44da-b4df-2469fdf242ba"><h4 class="Heading5">1.5.1.2 NAT Rules</h4></a><a name="613ddc78-45f1-4265-818d-1bf96c7eda63"><h5 class="Heading6">1.5.1.2.1 SNAT Rules</h5></a><div><table class="tabledefault-list" style="width:100%; table-layout: fixed; word-break: break-word;"><colgroup><col style="max-width:50%; min-width:50%; width:50%" /><col style="max-width:50%; min-width:50%; width:50%" /></colgroup>
+<tbody><tr><td>Rule ID</td><td>196610</td></tr><tr><td>Action</td><td>snat</td></tr><tr><td>Enabled</td><td>true</td></tr><tr><td>Description</td><td>&nbsp;</td></tr><tr><td>RuleType</td><td>user</td></tr><tr><td>EdgeNIC</td><td>1</td></tr><tr><td>OriginalAddress</td><td>10.10.10.0/24</td></tr><tr><td>OriginalPort</td><td>any</td></tr><tr><td>TranslatedAddress</td><td>192.168.46.50</td></tr><tr><td>TranslatedPort</td><td>any</td></tr><tr><td>Protocol</td><td>any</td></tr><tr><td>SNAT Destination Address</td><td>any</td></tr><tr><td>SNAT Destination Port</td><td>any</td></tr><tr><td>Logging Enabled</td><td>false</td></tr></tbody></table></div>
+<a name="bf383c93-7e36-4676-b4c7-6c48feeebc73"><h5 class="Heading6">1.5.1.2.2 DNAT Rules</h5></a><div><table class="tabledefault-list" style="width:100%; table-layout: fixed; word-break: break-word;"><colgroup><col style="max-width:50%; min-width:50%; width:50%" /><col style="max-width:50%; min-width:50%; width:50%" /></colgroup>
+<tbody><tr><td>Rule ID</td><td>196609</td></tr><tr><td>Action</td><td>dnat</td></tr><tr><td>Enabled</td><td>true</td></tr><tr><td>Description</td><td>&nbsp;</td></tr><tr><td>RuleType</td><td>user</td></tr><tr><td>EdgeNIC</td><td>0</td></tr><tr><td>OriginalAddress</td><td>192.168.46.50</td></tr><tr><td>OriginalPort</td><td>any</td></tr><tr><td>TranslatedAddress</td><td>10.10.10.1</td></tr><tr><td>TranslatedPort</td><td>any</td></tr><tr><td>Protocol</td><td>tcp</td></tr><tr><td>DNAT Source Address</td><td>any</td></tr><tr><td>DNAT Source Port</td><td>any</td></tr><tr><td>Logging Enabled</td><td>false</td></tr></tbody></table></div>
+<a name="1aac9161-15df-41af-a0ee-0d587e98d700"><h4 class="Heading5">1.5.1.3 DNS Settings</h4></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Edge Interface</th><th>DNS Servers</th><th>Cache Size</th><th>Logging Enabled</th><th>Logging Level</th></tr></thead><tbody>
+<tr><td>Internal_To_DLR</td><td>192.168.1.1, 192.168.1.2</td><td>16</td><td>false</td><td>info</td></tr>
+</tbody></table></div>
+<a name="c29756e4-617c-4fbf-82a8-24a15d892b3d"><h4 class="Heading5">1.5.1.4 Syslog Settings</h4></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Syslog Protocol</th><th>Syslog Servers</th></tr></thead><tbody>
+<tr><td>tcp</td><td>syslog.lab.virtualtassie.com, siem.lab.virtualtassie.com</td></tr>
+</tbody></table></div>
+<a name="d346d587-bce5-4288-93f7-03be4415e290"><h3 class="Heading4">1.5.2 SiteA-Web-LB01</h3></a><div><table class="tabledefault-list" style="width:100%;"><tbody><tr><td>Name</td><td>SiteA-Web-LB01</td></tr><tr><td>ID</td><td>edge-16</td></tr><tr><td>Version</td><td>12</td></tr><tr><td>Status</td><td>deployed</td></tr><tr><td>Type</td><td>gatewayServices</td></tr><tr><td>Connected VNICs</td><td>1</td></tr><tr><td>Edge Status</td><td>RED</td></tr><tr><td>Is Universal</td><td>false</td></tr><tr><td>Edge HA Enabled</td><td>false</td></tr><tr><td>Deploy Appliance</td><td>true</td></tr><tr><td>Appliance Size</td><td>compact</td></tr><tr><td>Syslog Enabled</td><td>false</td></tr><tr><td>SSH Enabled</td><td>true</td></tr><tr><td>Edge Autoconfiguration Enabled</td><td>true</td></tr><tr><td>FIPS Enabled</td><td>false</td></tr><tr><td>NAT Enabled</td><td>true</td></tr><tr><td>Layer 2 VPN Enabled</td><td>false</td></tr><tr><td>DNS Enabled</td><td>false</td></tr><tr><td>SSL VPN Enabled</td><td>false</td></tr><tr><td>Firewall Enabled</td><td>true</td></tr><tr><td>IPSEC VPN Enabled</td><td>false</td></tr><tr><td>Load Balancer Enabled</td><td>true</td></tr><tr><td>DHCP Server Enabled</td><td>false</td></tr><tr><td>Layer 2 Bridges Enabled</td><td>false</td></tr></tbody></table></div>
+<a name="071eb10f-c008-427a-b5a5-29d8011a1d50"><h4 class="Heading5">1.5.2.1 vNIC Settings</h4></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Label</th><th>VNIC Number</th><th>Name</th><th>MTU</th><th>Type</th><th>Connected</th><th>Portgroup Name</th></tr></thead><tbody>
+<tr><td>vNic_0</td><td>0</td><td>Uplink</td><td>1500</td><td>uplink</td><td>true</td><td>Web Network</td></tr>
+<tr><td>vNic_1</td><td>1</td><td>vnic1</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_2</td><td>2</td><td>vnic2</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_3</td><td>3</td><td>vnic3</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_4</td><td>4</td><td>vnic4</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_5</td><td>5</td><td>vnic5</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_6</td><td>6</td><td>vnic6</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_7</td><td>7</td><td>vnic7</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_8</td><td>8</td><td>vnic8</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_9</td><td>9</td><td>vnic9</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+</tbody></table></div>
+<a name="6738aec3-2e2e-4c41-81b7-23f5341234d8"><h3 class="Heading4">1.5.3 SiteA-App-LB01</h3></a><div><table class="tabledefault-list" style="width:100%;"><tbody><tr><td>Name</td><td>SiteA-App-LB01</td></tr><tr><td>ID</td><td>edge-17</td></tr><tr><td>Version</td><td>12</td></tr><tr><td>Status</td><td>deployed</td></tr><tr><td>Type</td><td>gatewayServices</td></tr><tr><td>Connected VNICs</td><td>1</td></tr><tr><td>Edge Status</td><td>GREEN</td></tr><tr><td>Is Universal</td><td>false</td></tr><tr><td>Edge HA Enabled</td><td>false</td></tr><tr><td>Deploy Appliance</td><td>true</td></tr><tr><td>Appliance Size</td><td>compact</td></tr><tr><td>Syslog Enabled</td><td>false</td></tr><tr><td>SSH Enabled</td><td>true</td></tr><tr><td>Edge Autoconfiguration Enabled</td><td>true</td></tr><tr><td>FIPS Enabled</td><td>false</td></tr><tr><td>NAT Enabled</td><td>true</td></tr><tr><td>Layer 2 VPN Enabled</td><td>false</td></tr><tr><td>DNS Enabled</td><td>false</td></tr><tr><td>SSL VPN Enabled</td><td>false</td></tr><tr><td>Firewall Enabled</td><td>true</td></tr><tr><td>IPSEC VPN Enabled</td><td>false</td></tr><tr><td>Load Balancer Enabled</td><td>true</td></tr><tr><td>DHCP Server Enabled</td><td>false</td></tr><tr><td>Layer 2 Bridges Enabled</td><td>false</td></tr></tbody></table></div>
+<a name="6b74eb2b-df73-49d3-acb0-c1fe14954df7"><h4 class="Heading5">1.5.3.1 vNIC Settings</h4></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Label</th><th>VNIC Number</th><th>Name</th><th>MTU</th><th>Type</th><th>Connected</th><th>Portgroup Name</th></tr></thead><tbody>
+<tr><td>vNic_0</td><td>0</td><td>Uplink</td><td>1500</td><td>uplink</td><td>true</td><td>App Network</td></tr>
+<tr><td>vNic_1</td><td>1</td><td>vnic1</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_2</td><td>2</td><td>vnic2</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_3</td><td>3</td><td>vnic3</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_4</td><td>4</td><td>vnic4</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_5</td><td>5</td><td>vnic5</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_6</td><td>6</td><td>vnic6</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_7</td><td>7</td><td>vnic7</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_8</td><td>8</td><td>vnic8</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_9</td><td>9</td><td>vnic9</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+</tbody></table></div>
+<a name="e6732d3b-510c-41ba-965c-39f7d91012b7"><h3 class="Heading4">1.5.4 Tenant1-ESG</h3></a><div><table class="tabledefault-list" style="width:100%;"><tbody><tr><td>Name</td><td>Tenant1-ESG</td></tr><tr><td>ID</td><td>edge-18</td></tr><tr><td>Version</td><td>15</td></tr><tr><td>Status</td><td>deployed</td></tr><tr><td>Type</td><td>gatewayServices</td></tr><tr><td>Connected VNICs</td><td>5</td></tr><tr><td>Edge Status</td><td>RED</td></tr><tr><td>Is Universal</td><td>false</td></tr><tr><td>Edge HA Enabled</td><td>false</td></tr><tr><td>Deploy Appliance</td><td>true</td></tr><tr><td>Appliance Size</td><td>compact</td></tr><tr><td>Syslog Enabled</td><td>true</td></tr><tr><td>SSH Enabled</td><td>false</td></tr><tr><td>Edge Autoconfiguration Enabled</td><td>true</td></tr><tr><td>FIPS Enabled</td><td>false</td></tr><tr><td>NAT Enabled</td><td>true</td></tr><tr><td>Layer 2 VPN Enabled</td><td>true</td></tr><tr><td>DNS Enabled</td><td>false</td></tr><tr><td>SSL VPN Enabled</td><td>false</td></tr><tr><td>Firewall Enabled</td><td>true</td></tr><tr><td>IPSEC VPN Enabled</td><td>false</td></tr><tr><td>Load Balancer Enabled</td><td>false</td></tr><tr><td>DHCP Server Enabled</td><td>false</td></tr><tr><td>Layer 2 Bridges Enabled</td><td>false</td></tr></tbody></table></div>
+<a name="ed12ed07-0e2b-44f5-8780-499f52e06304"><h4 class="Heading5">1.5.4.1 vNIC Settings</h4></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Label</th><th>VNIC Number</th><th>Name</th><th>MTU</th><th>Type</th><th>Connected</th><th>Portgroup Name</th></tr></thead><tbody>
+<tr><td>vNic_0</td><td>0</td><td>Uplink</td><td>1600</td><td>trunk</td><td>true</td><td>Tenant1-ESG</td></tr>
+<tr><td>vNic_1</td><td>1</td><td>Internal</td><td>1500</td><td>internal</td><td>true</td><td>Transit-Network</td></tr>
+<tr><td>vNic_2</td><td>2</td><td>vnic2</td><td>1500</td><td>uplink</td><td>true</td><td>VLAN-36</td></tr>
+<tr><td>vNic_3</td><td>3</td><td>vnic3</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_4</td><td>4</td><td>vnic4</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_5</td><td>5</td><td>vnic5</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_6</td><td>6</td><td>vnic6</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_7</td><td>7</td><td>vnic7</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_8</td><td>8</td><td>vnic8</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+<tr><td>vNic_9</td><td>9</td><td>vnic9</td><td>1500</td><td>internal</td><td>false</td><td>&nbsp;</td></tr>
+</tbody></table></div>
+<a name="ee3443ff-6efe-4692-a5d0-c3d26faef8a8"><h4 class="Heading5">1.5.4.2 Syslog Settings</h4></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Syslog Protocol</th><th>Syslog Servers</th></tr></thead><tbody>
+<tr><td>tcp</td><td>1.2.3.4</td></tr>
+</tbody></table></div>
+<a name="6b9729f3-b60f-4466-9e07-07c12db1fc24"><h2 class="Heading3">1.6 Distributed Firewall</h2></a><a name="86c285f4-57b4-4318-aa5d-de5773473982"><h3 class="Heading4">1.6.1 DFW Firewall Sections</h3></a><div><table class="tabledefault-list" style="width:100%; table-layout: fixed; word-break: break-word;"><colgroup><col style="max-width:50%; min-width:50%; width:50%" /><col style="max-width:50%; min-width:50%; width:50%" /></colgroup>
+<tbody><tr><td>Name</td><td>Active Directory</td></tr><tr><td>ID</td><td>1004</td></tr><tr><td>Stateless</td><td>false</td></tr><tr><td>Type</td><td>LAYER3</td></tr><tr><td># of Rules</td><td>2</td></tr><tr><td>Enable TCP Strict</td><td>false</td></tr><tr><td>Enable User Identity at Source</td><td>false</td></tr></tbody></table></div>
+<p />
+<div><table class="tabledefault-list" style="width:100%; table-layout: fixed; word-break: break-word;"><colgroup><col style="max-width:50%; min-width:50%; width:50%" /><col style="max-width:50%; min-width:50%; width:50%" /></colgroup>
+<tbody><tr><td>Name</td><td>Default Section Layer3</td></tr><tr><td>ID</td><td>1003</td></tr><tr><td>Stateless</td><td>false</td></tr><tr><td>Type</td><td>LAYER3</td></tr><tr><td># of Rules</td><td>3</td></tr><tr><td>Enable TCP Strict</td><td>false</td></tr><tr><td>Enable User Identity at Source</td><td>false</td></tr></tbody></table></div>
+<a name="58bdc673-d122-436c-9e3d-2db94f7d9708"><h3 class="Heading4">1.6.2 Active Directory Firewall Rules</h3></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Name</th><th>ID</th><th>Status</th><th>Action</th><th>Direction</th><th>Packet Type</th><th>Source</th><th>Source Type</th><th>Source Negate</th><th>Destination</th><th>Destination Type</th><th>Destination Negate</th><th>Service Name</th><th>Applied To</th><th>Log Enabled</th></tr></thead><tbody>
+<tr><td>Test Rule 2</td><td>1006</td><td>Enabled</td><td>allow</td><td>inout</td><td>any</td><td>Any</td><td>&nbsp;</td><td>&nbsp;</td><td>Any</td><td>&nbsp;</td><td>&nbsp;</td><td>ICMP Echo, ICMP Echo Reply</td><td>DISTRIBUTED_FIREWALL</td><td>false</td></tr>
+<tr><td>Test Rule 1</td><td>1005</td><td>Enabled</td><td>allow</td><td>inout</td><td>any</td><td>Any</td><td>&nbsp;</td><td>&nbsp;</td><td>Any</td><td>&nbsp;</td><td>&nbsp;</td><td>Any</td><td>DISTRIBUTED_FIREWALL</td><td>false</td></tr>
+</tbody></table></div>
+<a name="55ce666a-40ad-4c7c-95ce-b25909125b27"><h3 class="Heading4">1.6.3 Default Section Layer3 Firewall Rules</h3></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Name</th><th>ID</th><th>Status</th><th>Action</th><th>Direction</th><th>Packet Type</th><th>Source</th><th>Source Type</th><th>Source Negate</th><th>Destination</th><th>Destination Type</th><th>Destination Negate</th><th>Service Name</th><th>Applied To</th><th>Log Enabled</th></tr></thead><tbody>
+<tr><td>Default Rule NDP</td><td>1003</td><td>Enabled</td><td>allow</td><td>inout</td><td>any</td><td>Any</td><td>&nbsp;</td><td>&nbsp;</td><td>Any</td><td>&nbsp;</td><td>&nbsp;</td><td>IPv6-ICMP Neighbor Solicitation, IPv6-ICMP Neighbor Advertisement</td><td>DISTRIBUTED_FIREWALL</td><td>false</td></tr>
+<tr><td>Default Rule DHCP</td><td>1002</td><td>Enabled</td><td>reject</td><td>inout</td><td>any</td><td>Any</td><td>&nbsp;</td><td>&nbsp;</td><td>Any</td><td>&nbsp;</td><td>&nbsp;</td><td>DHCP-Server, DHCP-Client</td><td>DISTRIBUTED_FIREWALL</td><td>false</td></tr>
+<tr><td>Default Rule</td><td>1001</td><td>Enabled</td><td>allow</td><td>inout</td><td>any</td><td>Any</td><td>&nbsp;</td><td>&nbsp;</td><td>Any</td><td>&nbsp;</td><td>&nbsp;</td><td>Any</td><td>DISTRIBUTED_FIREWALL</td><td>false</td></tr>
+</tbody></table></div>
+<a name="085528e6-9c83-4626-8a98-ada0c7cc774f"><h2 class="Heading3">1.7 Security Groups</h2></a><a name="61ad6900-c178-4e40-8460-d383b4c63933"><h3 class="Heading4">1.7.1 Security Group Summary</h3></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Name</th><th>Scope</th><th>Is Universal</th><th>Inheritance Allowed</th><th>Object ID</th><th>Group Type</th></tr></thead><tbody>
+<tr><td>Test Group</td><td>Global</td><td>false</td><td>false</td><td>securitygroup-10</td><td>Dynamic</td></tr>
+<tr><td>App Servers</td><td>Global</td><td>false</td><td>false</td><td>securitygroup-12</td><td>Static</td></tr>
+</tbody></table></div>
+<a name="3def45e5-ed6d-4b86-9673-287267c88a6d"><h4 class="Heading5">1.7.1.1 Static Security Groups</h4></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Name</th><th>Description</th><th>Members</th></tr></thead><tbody>
+<tr><td>App Servers</td><td>SG for app Servers</td><td>App01, App02</td></tr>
+</tbody></table></div>
+<a name="8389b568-dc1b-4026-8a2c-1f4040ad876f"><h4 class="Heading5">1.7.1.2 Dynamic Security Groups</h4></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Name</th><th>Operator</th><th>Key</th><th>Criteria</th><th>Value</th></tr></thead><tbody>
+<tr><td>Test Group</td><td>OR</td><td>VM.NAME</td><td>contains</td><td>web</td></tr>
+</tbody></table></div>
+<a name="4c53b5f9-2159-4fdd-8637-ca9958f457ff"><h2 class="Heading3">1.8 IP Sets</h2></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Name</th><th>ID</th><th>Description</th><th>Is Universal</th><th>Inheritance Allowed</th><th>Members</th></tr></thead><tbody>
+<tr><td>SiteA-DLR-01</td><td>ipset-2</td><td>&nbsp;</td><td>false</td><td>false</td><td>10.0.0.12,10.11.0.1,203.10.45.1/24,192.168.10.0-192.168.10.10</td></tr>
+</tbody></table></div>
+<a name="622c3afb-d55b-444b-8b04-cb9526c618fa"><h2 class="Heading3">1.9 Mac Sets</h2></a><div><table class="tabledefault" style="width:100%;"><thead><tr><th>Name</th><th>ID</th><th>Description</th><th>Is Universal</th><th>Inheritance Allowed</th><th>Members</th></tr></thead><tbody>
+<tr><td>testmacset</td><td>macset-66241493-cacc-47d8-8e37-16923d698dc6</td><td>Test mac set</td><td>true</td><td>false</td><td>EF:34:DD:00:43:A4,11:22:33:44:55:66</td></tr>
+</tbody></table></div>
