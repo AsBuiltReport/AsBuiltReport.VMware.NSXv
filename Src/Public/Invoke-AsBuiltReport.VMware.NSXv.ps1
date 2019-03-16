@@ -5,14 +5,14 @@ function Invoke-AsBuiltReport.VMware.NSXv {
     .DESCRIPTION
         Documents the configuration of VMware NSX-V in Word/HTML/XML/Text formats using PScribo.
     .NOTES
-        Version:        0.1.2
+        Version:        0.4.0
         Author:         Matt Allford
         Twitter:        @mattallford
         Github:         mattallford
         Credits:        Iain Brighton (@iainbrighton) - PScribo module
 
     .LINK
-        https://github.com/tpcarman/As-Built-Report
+        https://github.com/AsBuiltReport/AsBuiltReport.VMware.NSXv
     #>
 
     #region Script Parameters

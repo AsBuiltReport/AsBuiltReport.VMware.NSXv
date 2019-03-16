@@ -1,6 +1,11 @@
 # VMware NSX-V As-Built Report Changelog
 
-## [Unreleased]
+## [0.4.0] - 2019-03-15
+### Changed
+- Refactored in to PowerShell module
+- Updated default VMware style sheet to include page orientation
+
+## [0.1.3] - 2018-10-20
 ### Changed
 - Implement fix to capture and commar separate multiple values in the source, destination, source type and destination type fields
 - Fix typo
