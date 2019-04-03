@@ -1,3 +1,24 @@
+<p align="center">
+    <a href="https://www.powershellgallery.com/packages/AsBuiltReport.VMware.NSXv/" alt="PowerShell Gallery Version">
+        <img src="https://img.shields.io/powershellgallery/v/AsBuiltReport.VMware.NSXv.svg" /></a>
+    <a href="https://www.powershellgallery.com/packages/AsBuiltReport.VMware.NSXv/" alt="PS Gallery Downloads">
+        <img src="https://img.shields.io/powershellgallery/dt/AsBuiltReport.VMware.NSXv.svg" /></a>
+    <a href="https://www.powershellgallery.com/packages/AsBuiltReport.VMware.NSXv/" alt="PS Platform">
+        <img src="https://img.shields.io/powershellgallery/p/AsBuiltReport.VMware.NSXv.svg" /></a>
+</p>
+<p align="center">
+    <a href="https://github.com/AsBuiltReport/AsBuiltReport.VMware.NSXv/graphs/commit-activity" alt="GitHub Last Commit">
+        <img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.VMware.NSXv/master.svg" /></a>
+    <a href="https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.VMware.NSXv/master/LICENSE" alt="GitHub License">
+        <img src="https://img.shields.io/github/license/AsBuiltReport/AsBuiltReport.VMware.NSXv.svg" /></a>
+    <a href="https://github.com/AsBuiltReport/AsBuiltReport.VMware.NSXv/graphs/contributors" alt="GitHub Contributors">
+        <img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.VMware.NSXv.svg"/></a>
+</p>
+<p align="center">
+    <a href="https://twitter.com/AsBuiltReport" target="_blank" alt="Twitter">
+            <img src="https://img.shields.io/twitter/follow/AsBuiltReport.svg?style=social"/></a>
+</p>
+
 # VMware NSX-v AsBuiltReport
 
 The VMware NSX-v AsBuiltReport is a module of the parent "AsBuiltReport" project (https://github.com/AsBuiltReport/AsBuiltReport). AsBuiltReport is a PowerShell module which generates As-Built documentation for many common datacentre infrastructure systems. Reports can be generated in Text, XML, HTML and MS Word formats and can be presented with custom styling to align with your company/customer's brand.
