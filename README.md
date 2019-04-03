@@ -89,4 +89,4 @@ There is one example listed below on running the AsBuiltReport script against a 
 PS C:\>New-AsBuiltReport -Report VMware.NSXv -Target vc01 -Credential (Get-Credential) -Format HTML,Word -OutputPath C:\Scripts
 ```
 
-## Knwon Issues
+## Known Issues
