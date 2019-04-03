@@ -21,7 +21,7 @@
 
 # VMware NSX-v AsBuiltReport
 
-The VMware NSX-v AsBuiltReport is a module of the parent "AsBuiltReport" project (https://github.com/AsBuiltReport/AsBuiltReport). AsBuiltReport is a PowerShell module which generates As-Built documentation for many common datacentre infrastructure systems. Reports can be generated in Text, XML, HTML and MS Word formats and can be presented with custom styling to align with your company/customer's brand.
+The VMware NSX-v AsBuiltReport is a module of the parent "AsBuiltReport" [project](https://github.com/AsBuiltReport/AsBuiltReport). AsBuiltReport is a PowerShell module which generates As-Built documentation for many common datacentre infrastructure systems. Reports can be generated in Text, XML, HTML and MS Word formats and can be presented with custom styling to align with your company/customer's brand.
 
 For detailed documentation around the whole project, please refer to the `README.md` file in the parent AsBuiltReport repository (linked to above). This README is specific only to the VMware NSX-v repository.
 
@@ -30,12 +30,12 @@ For detailed documentation around the whole project, please refer to the `README
 ## Sample Report 1 - Default Style
 Sample NSX-v As Built report using default report style.
 
-![Sample vSphere Report 1](https://github.com/AsBuiltReport/AsBuiltReport.VMware.vSphere/blob/master/Samples/Sample_NSXv_Report_1.png "Sample NSX-v Report 1")
+![Sample vSphere Report 1](https://github.com/AsBuiltReport/AsBuiltReport.VMware.NSXv/blob/master/Samples/Sample_NSXv_Report_1.png "Sample NSX-v Report 1")
 
 ## Sample Report 2 - Custom Style
 Sample NSX-v As Built report using custom report style.
 
-![Sample vSphere Report 2](https://github.com/AsBuiltReport/AsBuiltReport.VMware.vSphere/blob/master/Samples/Sample_NSXv_Report_2.png "Sample NSX-v Report 2")
+![Sample vSphere Report 2](https://github.com/AsBuiltReport/AsBuiltReport.VMware.NSXv/blob/master/Samples/Sample_NSXv_Report_2.png "Sample NSX-v Report 2")
 
 # Getting Started
 
@@ -47,16 +47,16 @@ The following PowerShell modules are required for generating a VMware NSX-v As B
 Each of these modules can be easily downloaded and installed via the PowerShell Gallery 
 
 - [AsBuiltReport Module](https://www.powershellgallery.com/packages/AsBuiltReport/)
-- [Pure Storage Powershell SDK Module](https://www.powershellgallery.com/packages/PowerNSX/)
+- [PowerNSX Module](https://www.powershellgallery.com/packages/PowerNSX/)
 - [VMware PowerCLI Module](https://www.powershellgallery.com/packages/VMware.PowerCLI/)
 
 ### Module Installation
 
 Open a Windows PowerShell terminal window and install each of the required modules as follows;
 ```powershell
-Install-Module AsBuiltReport
-Install-Module PowerNSX
 Install-Module VMware.PowerCLI
+Install-Module PowerNSX
+Install-Module AsBuiltReport
 ```
 
 ### Required Privileges
@@ -82,7 +82,7 @@ The following provides information of how to configure each schema within the re
 
 
 ## Examples
-There is one example listed below on running the AsBuiltReport script against a Pure Storage FlashArray target. Refer to the `README.md` file in the main AsBuiltReport project repository for more examples.
+There is one example listed below on running the AsBuiltReport script against a vCenter Server target which will report on the NSX environment registered with the specified vCenter Server.
 
 - The following creates a VMware NSXv As-Built report in HTML & Word formats and exports the report to the C:\scripts folder
 ```powershell
