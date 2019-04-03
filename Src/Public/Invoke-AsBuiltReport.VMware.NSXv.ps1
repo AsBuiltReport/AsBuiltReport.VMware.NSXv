@@ -5,7 +5,7 @@ function Invoke-AsBuiltReport.VMware.NSXv {
     .DESCRIPTION
         Documents the configuration of VMware NSX-V in Word/HTML/XML/Text formats using PScribo.
     .NOTES
-        Version:        0.4.0
+        Version:        0.4.1
         Author:         Matt Allford
         Twitter:        @mattallford
         Github:         mattallford
@@ -20,7 +20,7 @@ function Invoke-AsBuiltReport.VMware.NSXv {
     param (
         [String[]] $Target,
         [pscredential] $Credential,
-		$StylePath
+        $StylePath
     )
     
     # If custom style not set, use default style
@@ -28,12 +28,11 @@ function Invoke-AsBuiltReport.VMware.NSXv {
         & "$PSScriptRoot\..\..\AsBuiltReport.VMware.NSXv.Style.ps1"
     }
     
-    foreach ($Server in $Target){
-        $script:NSXManager = $null
+    foreach ($Server in $Target) {
         Try { 
             $script:NSXManager = Connect-NsxServer -vCenterServer $Server -Credential $Credential -ErrorAction Stop
         } Catch { 
-            Write-Verbose "Unable to connect to NSX Manager for the vCenter Server $Server."
+            Write-Error $_
         }
 
         if ($NSXManager) {
@@ -51,7 +50,7 @@ function Invoke-AsBuiltReport.VMware.NSXv {
             $script:NSXMacSets = Get-NsxMacSet
 
             #Create major section in the output file for VMware NSX
-            section -Style Heading2 'NSX' {
+            Section -Style Heading2 'NSX' {
                 Paragraph 'The following section provides a summary of the VMware NSX configuration.'
                 BlankLine
                 #Provide a summary of the NSX Environment
@@ -73,7 +72,7 @@ function Invoke-AsBuiltReport.VMware.NSXv {
 
                 #If this NSX Manager has Controllers, provide a summary of the NSX Controllers
                 if ($NSXControllers) {
-                    section -Style Heading3 'Controllers' {
+                    Section -Style Heading3 'Controllers' {
                         $NSXControllerSettings = foreach ($NSXController in $NSXControllers) {
                             [PSCustomObject] @{
                                 Name = $NSXController.Name
@@ -105,7 +104,7 @@ function Invoke-AsBuiltReport.VMware.NSXv {
 
                 if ($NSXTransportZones) {
                     Section -Style Heading3 'Transport Zones' {
-                        $NSXTransportZoneSettings = foreach ($NSXTransportZone in $NSXTransportZones){
+                        $NSXTransportZoneSettings = foreach ($NSXTransportZone in $NSXTransportZones) {
                             [PSCustomObject]@{
                                 Name = $NSXTransportZone.Name
                                 'Is Universal' = $NSXTransportZone.isUniversal
@@ -120,9 +119,9 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                     }
                 }
 
-                if ($NSXLogicalSwitches){
+                if ($NSXLogicalSwitches) {
                     Section -Style Heading3 'Logical Switches' {
-                        $NSXLogicalSwitchSettings = foreach ($NSXLogicalSwitch in $NSXLogicalSwitches){
+                        $NSXLogicalSwitchSettings = foreach ($NSXLogicalSwitch in $NSXLogicalSwitches) {
                             $BackingPortGroup = $NSXLogicalSwitch | Get-NsxBackingPortGroup
                             $VMsAttachedToLogicalSwitch = $BackingPortGroup | Get-VM
                             [PSCustomObject]@{
@@ -192,54 +191,54 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                             $NSXEdgeNATRules = $NSXEdge | Get-NsxEdgeNat | Get-NsxEdgeNatRule
                             if ($NSXEdgeNATRules) {
                                 Section -Style Heading5 "NAT Rules" {
-                                    $SNATRules = $NSXEdgeNATRules | Where-Object {$_.Action -eq "snat"}
-                                    $DNATRules = $NSXEdgeNATRules | Where-Object {$_.Action -eq "dnat"}
-									if ($SNATRules){
-										Section -Style Heading6 "SNAT Rules" {
-											$SNATRuleConfig = foreach ($SNATRule in $SNATRules) {
-												[PSCustomObject] @{
-													'Rule ID' = $SNATRule.RuleId
-													Action = $SNATRule.Action
-													Enabled = $SNATRule.Enabled
-													Description = $SNATRule.Description
-													RuleType = $SNATRule.RuleType
-													EdgeNIC = $SNATRule.vnic
-													OriginalAddress = $SNATRule.OriginalAddress
-													OriginalPort = $SNATRule.OriginalPort
-													TranslatedAddress = $SNATRule.TranslatedAddress
-													TranslatedPort = $SNATRule.TranslatedPort
-													Protocol = $SNATRule.Protocol
-													'SNAT Destination Address' = $SNATRule.snatMatchDestinationAddress
-													'SNAT Destination Port' = $SNATRule.snatMatchDestinationPort
-													'Logging Enabled' = $SNATRule.loggingEnabled
-												}
-											}
-											$SNATRuleConfig | Table -Name "SNAT Rules" -List -ColumnWidths 50, 50
-										}
-									}#end if $SNATRules
-									if ($DNATRules){
-										Section -Style Heading6 "DNAT Rules" {
-											$DNATRuleConfig = foreach ($DNATRule in $DNATRules) {
-												[PSCustomObject] @{
-													'Rule ID' = $DNATRule.RuleId
-													Action = $DNATRule.Action
-													Enabled = $DNATRule.Enabled
-													Description = $DNATRule.Description
-													RuleType = $DNATRule.RuleType
-													EdgeNIC = $DNATRule.vnic
-													OriginalAddress = $DNATRule.OriginalAddress
-													OriginalPort = $DNATRule.OriginalPort
-													TranslatedAddress = $DNATRule.TranslatedAddress
-													TranslatedPort = $DNATRule.TranslatedPort
-													Protocol = $DNATRule.Protocol
-													'DNAT Source Address' = $DNATRule.dnatMatchSourceAddress
-													'DNAT Source Port' = $DNATRule.dnatMatchSourcePort
-													'Logging Enabled' = $DNATRule.loggingEnabled
-												}
-											}
-											$DNATRuleConfig | Table -Name "DNAT Rules" -List -ColumnWidths 50, 50
-										}
-									}#end if $DNATRules
+                                    $SNATRules = $NSXEdgeNATRules | Where-Object { $_.Action -eq "snat" }
+                                    $DNATRules = $NSXEdgeNATRules | Where-Object { $_.Action -eq "dnat" }
+                                    if ($SNATRules) {
+                                        Section -Style Heading6 "SNAT Rules" {
+                                            $SNATRuleConfig = foreach ($SNATRule in $SNATRules) {
+                                                [PSCustomObject] @{
+                                                    'Rule ID' = $SNATRule.RuleId
+                                                    Action = $SNATRule.Action
+                                                    Enabled = $SNATRule.Enabled
+                                                    Description = $SNATRule.Description
+                                                    RuleType = $SNATRule.RuleType
+                                                    EdgeNIC = $SNATRule.vnic
+                                                    OriginalAddress = $SNATRule.OriginalAddress
+                                                    OriginalPort = $SNATRule.OriginalPort
+                                                    TranslatedAddress = $SNATRule.TranslatedAddress
+                                                    TranslatedPort = $SNATRule.TranslatedPort
+                                                    Protocol = $SNATRule.Protocol
+                                                    'SNAT Destination Address' = $SNATRule.snatMatchDestinationAddress
+                                                    'SNAT Destination Port' = $SNATRule.snatMatchDestinationPort
+                                                    'Logging Enabled' = $SNATRule.loggingEnabled
+                                                }
+                                            }
+                                            $SNATRuleConfig | Table -Name "SNAT Rules" -List -ColumnWidths 50, 50
+                                        }
+                                    }#end if $SNATRules
+                                    if ($DNATRules) {
+                                        Section -Style Heading6 "DNAT Rules" {
+                                            $DNATRuleConfig = foreach ($DNATRule in $DNATRules) {
+                                                [PSCustomObject] @{
+                                                    'Rule ID' = $DNATRule.RuleId
+                                                    Action = $DNATRule.Action
+                                                    Enabled = $DNATRule.Enabled
+                                                    Description = $DNATRule.Description
+                                                    RuleType = $DNATRule.RuleType
+                                                    EdgeNIC = $DNATRule.vnic
+                                                    OriginalAddress = $DNATRule.OriginalAddress
+                                                    OriginalPort = $DNATRule.OriginalPort
+                                                    TranslatedAddress = $DNATRule.TranslatedAddress
+                                                    TranslatedPort = $DNATRule.TranslatedPort
+                                                    Protocol = $DNATRule.Protocol
+                                                    'DNAT Source Address' = $DNATRule.dnatMatchSourceAddress
+                                                    'DNAT Source Port' = $DNATRule.dnatMatchSourcePort
+                                                    'Logging Enabled' = $DNATRule.loggingEnabled
+                                                }
+                                            }
+                                            $DNATRuleConfig | Table -Name "DNAT Rules" -List -ColumnWidths 50, 50
+                                        }
+                                    }#end if $DNATRules
                                 }#end Section -Style Heading5 "NAT Rules"
                             }#End $NSXEdgeNATRules
 
@@ -313,7 +312,7 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                     #Check to see if any VMs are excluded from the NSX Distributed Firewall, and if they are, list them here
                     if ($NSXFirewallExclusionList) {
                         Section -Style Heading4 "Distributed Firewall Exclusion List" {
-                            $NSXFirewallExclusionList | Select-Object Name | table -Name "Distributed Firewall Exclusion List"
+                            $NSXFirewallExclusionList | Select-Object Name | Table -Name "Distributed Firewall Exclusion List"
                         }
                     }
                     #Document the NSX DFW Sections
@@ -330,7 +329,7 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                                     'Enable User Identity at Source' = $NSXFirewallSection.useSid
                                 }
                             }
-                            $NSXFirewallSectionSettings | table -Name "DFW Firewall Section Information" -List -ColumnWidths 50, 50
+                            $NSXFirewallSectionSettings | Table -Name "DFW Firewall Section Information" -List -ColumnWidths 50, 50
                         }
 
                         #For each Section in the DFW, loop through to get information about each rule within the secion and document each rule
@@ -386,7 +385,7 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                                             'Log Enabled' = $NSXDFWRule.Logged
                                         }
                                     }
-                                    $NSXDFWRuleInfo | table -Name "DFW Firewall Rules"
+                                    $NSXDFWRuleInfo | Table -Name "DFW Firewall Rules"
                                 }
                             }
 
@@ -432,11 +431,11 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                                 }
                             }
                             #Export the information regarding both dynamic and static security groups
-                            $NSXSecurityGroupSummary | table -Name "Security Groups"
+                            $NSXSecurityGroupSummary | Table -Name "Security Groups"
 
                             #If there are any static security groups in the environment, export specific information about the security groups, including the membership
                             if ($StaticNSXSecurityGroups) {
-                                section -Style Heading5 'Static Security Groups' {
+                                Section -Style Heading5 'Static Security Groups' {
                                     $StaticNSXSecurityGroupSettings = foreach ($StaticNSXSecurityGroup in $StaticNSXSecurityGroups) {
                                         [PSCustomObject]@{
                                             Name = $StaticNSXSecurityGroup.Name
@@ -444,13 +443,13 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                                             Members = ($StaticNSXSecurityGroup.member.Name -join ", ")
                                         }
                                     }
-                                    $StaticNSXSecurityGroupSettings | table -Name "Static Security Group Membership"
+                                    $StaticNSXSecurityGroupSettings | Table -Name "Static Security Group Membership"
                                 }
                             }
 
                             #If there are any dynamic security groups in the environment, export specific information about the security groups, including the dynamic criteria
                             if ($DynamicNSXSecurityGroups) {
-                                section -Style Heading5 'Dynamic Security Groups' {
+                                Section -Style Heading5 'Dynamic Security Groups' {
                                     $DynamicNSXSecurityGroupSettings = foreach ($DynamicNSXSecurityGroup in $DynamicNSXSecurityGroups) {
                                         [PSCustomObject]@{
                                             Name = $DynamicNSXSecurityGroup.Name
@@ -460,16 +459,16 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                                             Value = $DynamicNSXSecurityGroup.dynamicMemberDefinition.DynamicSet.DynamicCriteria.Value
                                         }
                                     }
-                                    $DynamicNSXSecurityGroupSettings | table -Name "Dynamic Security Group Membership"
+                                    $DynamicNSXSecurityGroupSettings | Table -Name "Dynamic Security Group Membership"
                                 }
                             }
                         }
                     }#End Section Security Groups
                 }#End if NSXSecurityGroups
 
-                if ($NSXIPSets){
+                if ($NSXIPSets) {
                     Section -Style Heading3 'IP Sets' {
-                        $NSXIPSetConfiguration = foreach ($NSXIPSet in $NSXIPSets){
+                        $NSXIPSetConfiguration = foreach ($NSXIPSet in $NSXIPSets) {
                             [PSCustomObject]@{
                                 Name = $NSXIPSet.Name
                                 ID = $NSXIPSet.ObjectID
@@ -483,9 +482,9 @@ function Invoke-AsBuiltReport.VMware.NSXv {
                     }#End Section IP Sets
                 }#End if NSX IP Sets
 
-                if ($NSXMacSets){
+                if ($NSXMacSets) {
                     Section -Style Heading3 'Mac Sets' {
-                        $NSXMacSetConfiguration = foreach ($NSXMacSet in $NSXMacSets){
+                        $NSXMacSetConfiguration = foreach ($NSXMacSet in $NSXMacSets) {
                             [PSCustomObject]@{
                                 Name = $NSXMacSet.Name
                                 ID = $NSXMacSet.ObjectID
@@ -502,6 +501,9 @@ function Invoke-AsBuiltReport.VMware.NSXv {
             }
             #Disconnect from the NSX Manager Server
             Disconnect-NsxServer
-        }
+        }#End if NSX Manager
+        #region Variable cleanup
+        Clear-Variable -Name NSXManager
+        #endregion Variable cleanup
     }
 }
