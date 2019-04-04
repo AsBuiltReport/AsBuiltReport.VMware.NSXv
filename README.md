@@ -46,9 +46,9 @@ The following PowerShell modules are required for generating a VMware NSX-v As B
 
 Each of these modules can be easily downloaded and installed via the PowerShell Gallery 
 
-- [AsBuiltReport Module](https://www.powershellgallery.com/packages/AsBuiltReport/)
-- [PowerNSX Module](https://www.powershellgallery.com/packages/PowerNSX/)
 - [VMware PowerCLI Module](https://www.powershellgallery.com/packages/VMware.PowerCLI/)
+- [PowerNSX Module](https://www.powershellgallery.com/packages/PowerNSX/)
+- [AsBuiltReport Module](https://www.powershellgallery.com/packages/AsBuiltReport/)
 
 ### Module Installation
 
