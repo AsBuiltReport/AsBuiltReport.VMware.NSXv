@@ -1,5 +1,12 @@
 # VMware NSX-V As-Built Report Changelog
 
+## [0.4.1] - 2019-04-03
+### Changed
+- Apply VSCode formatting to the invoke function
+- Update version in manifest
+- Add new tag to manifest
+- Modify the process to connect to NSX manager to improve flow and error handling, and standardise with other reports
+
 ## [0.4.0] - 2019-03-15
 ### Changed
 - Refactored in to PowerShell module
